@@ -6,16 +6,23 @@ const $lngInput = document.querySelector('.lng-input')
 
 const handleGeolocation = () => {
     const onSuccess = (position) => {
+        console.log("======")
+        console.log(position)
+        console.log("======")
         if (position && position.coords) {
             $latInput.value = position.coords.latitude
             $lngInput.value = position.coords.longitude
         }
     }
 
-    const onError = error => {}
+    const onError = error => {
+        console.log("+++++")
+        console.log(error)
+        console.log("+++++")
+        }
 
     if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(onError, onSuccess)
+        navigator.geolocation.getCurrentPosition(onSuccess,onError )
     }
 }
 
