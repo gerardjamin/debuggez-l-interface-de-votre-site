@@ -5,6 +5,7 @@ const $lngInput = document.querySelector('.lng-input')
 
 
 const handleGeolocation = () => {
+    //fonction de callback
     const onSuccess = (position) => {
         console.log("======")
         console.log(position)
@@ -14,7 +15,7 @@ const handleGeolocation = () => {
             $lngInput.value = position.coords.longitude
         }
     }
-
+    //fonction de callback
     const onError = error => {
         console.log("+++++")
         console.log(error)
